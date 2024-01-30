@@ -23,3 +23,6 @@ C:\Users\<User>\AppData\Local\messe.db
 ```
 
 After that, you can simply start the project by clicking on "Start". Several projects will be opened: the API server (for testing purposes only; in real deployment, it resides in the company headquarters) and the Messe Client.
+
+
+*© FH 2024*
