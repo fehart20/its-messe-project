@@ -16,6 +16,16 @@ namespace Messe_Projekt_Client
 
             try
             {
+                if (string.IsNullOrEmpty(tb_Street.Text) ||
+                    string.IsNullOrEmpty(tb_Hausnummer.Text) ||
+                    string.IsNullOrEmpty(tb_PLZ.Text) ||
+                    string.IsNullOrEmpty(tb_Vorname.Text) ||
+                    string.IsNullOrEmpty(tb_Nachname.Text) ||
+                    string.IsNullOrEmpty(tb_Ort.Text))
+                {
+                    throw new Exception("Alle Felder müssen ausgefüllt werden.");
+                }
+
                 Anschrift anschrift = new Anschrift
                 {
                     Strasse = tb_Street.Text,
@@ -55,13 +65,21 @@ namespace Messe_Projekt_Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Fehlende Eingabe oder Fehler: \n{ex}");
+                MessageBox.Show($"Fehlende Eingabe oder Fehler:\n{ex}", "Warnung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            db.SaveChanges();
 
-            MessageBox.Show("Daten erfolgreich erfasst - Vielen Dank!");
+            try { 
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Die Datenbank wurde nicht gefunden oder ist fehlerhaft:\n{ex}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Daten erfolgreich erfasst - Vielen Dank!", "Erfolg!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             tb_Vorname.Clear();
             tb_Nachname.Clear();
