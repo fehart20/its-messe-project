@@ -12,7 +12,10 @@ Additionally, the following NuGet packages must be installed (usually included i
 
 ## On-site Deployment
 
-To start the project, you need to initialize the local database first. This can be done by executing the following command in the "Package Manager Console" (under Tools > NuGet Package Manager): `Update-Database`
+To start the project, you need to initialize the local database first. This can be done by executing the following command in the "Package Manager Console" (under Tools > NuGet Package Manager): 
+```powershell
+Update-Database
+```
 
 The database is stored at the following path:
 ```
