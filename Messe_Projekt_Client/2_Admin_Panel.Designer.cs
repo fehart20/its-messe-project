@@ -47,7 +47,6 @@
             // 
             // rTB_usernames
             // 
-            rTB_usernames.Enabled = false;
             rTB_usernames.Location = new Point(12, 83);
             rTB_usernames.Name = "rTB_usernames";
             rTB_usernames.ReadOnly = true;
