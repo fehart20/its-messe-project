@@ -10,8 +10,15 @@
         public int Plz { get; set; }
         public string Ort { get; set; }
         public string Firma { get; set; }
-        public List<String>? Interessen { get; set; }
+        public List<Interesse>? Interessen { get; set; }
         public bool Confirmed { get; set; }
         public DateTime RequestTime { get; set; }
+    }
+
+    public class Interesse
+    {
+        public int InteresseId { get; set; }
+        public string ProduktgruppeName { get; set; }
+
     }
 }

@@ -68,8 +68,9 @@
             Controls.Add(pwbox);
             Controls.Add(button1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "_1_Admin_Password";
-            Text = "_1_Admin_Password";
+            Text = "Passwort eingeben";
             ResumeLayout(false);
             PerformLayout();
         }

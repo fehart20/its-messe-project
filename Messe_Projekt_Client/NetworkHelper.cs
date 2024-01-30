@@ -13,7 +13,7 @@ namespace Messe_Projekt_Client
     internal class NetworkHelper
     {
 
-        static async public Task<InfoItem> CheckWebapi(string vorname, string nachname, string strasse, string hausnummer, int plz, string ort, string firma)
+        static async public Task<InfoItem> CheckWebapi(string vorname, string nachname, string strasse, string hausnummer, int plz, string ort, string firma, List<Interesse> interessen)
         {
 
 
@@ -27,8 +27,8 @@ namespace Messe_Projekt_Client
             transfer.Hausnummer = hausnummer;
             transfer.Plz = plz;
             transfer.Ort = ort;
-            // transfer.Interessen = interessen;
             transfer.Firma = firma;
+            transfer.Interessen = interessen;
             transfer.Confirmed= false;
             transfer.Username = "-";
             transfer.RequestTime= DateTime.Now;
@@ -45,7 +45,6 @@ namespace Messe_Projekt_Client
 
                 if (response.IsSuccessStatusCode)
                 {
-
                     Task<string> antwort = response.Content.ReadAsStringAsync();
                     string desSource = antwort.Result;
                     InfoItem buffer = JsonConvert.DeserializeObject<InfoItem>(desSource);

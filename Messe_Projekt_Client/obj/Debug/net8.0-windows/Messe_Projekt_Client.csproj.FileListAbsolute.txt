@@ -371,3 +371,4 @@ C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\Messe_Projekt_Client\obj
 C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\Messe_Projekt_Client\obj\Debug\net8.0-windows\Messe_Projekt_Client.pdb
 C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\Messe_Projekt_Client\obj\Debug\net8.0-windows\Messe_Projekt_Client.genruntimeconfig.cache
 C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\Messe_Projekt_Client\obj\Debug\net8.0-windows\ref\Messe_Projekt_Client.dll
+C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\Messe_Projekt_Client\obj\Debug\net8.0-windows\Messe_Projekt_Client.sourcelink.json

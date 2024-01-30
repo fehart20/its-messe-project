@@ -93,8 +93,9 @@
             Controls.Add(rTB_database_entries);
             Controls.Add(rTB_usernames);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "_2_Admin_Panel";
-            Text = "_2_Admin_Panel";
+            Text = "Admin Panel";
             ResumeLayout(false);
             PerformLayout();
         }

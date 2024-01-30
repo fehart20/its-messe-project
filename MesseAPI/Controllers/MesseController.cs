@@ -10,10 +10,7 @@ namespace MesseAPI.Controllers
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
-
-        //Insert Database or something else here :)
-        List<InfoItem> debugList = new List<InfoItem>();
-        
+       
        
         [HttpPost]
         public InfoItem Post(InfoItem requestItem)
@@ -21,7 +18,8 @@ namespace MesseAPI.Controllers
         {
             InfoItem confirmItem = new InfoItem();
 
-
+            //Insert Database or something else here :)
+            List<InfoItem> debugList = new List<InfoItem>();
             debugList.Add(requestItem);
 
 
@@ -29,6 +27,7 @@ namespace MesseAPI.Controllers
             {
                confirmItem.Username= requestItem.Vorname+"."+requestItem.Nachname; 
                confirmItem.Confirmed= true;
+               confirmItem.RequestTime = requestItem.RequestTime;
             }
             else
             {

@@ -126,3 +126,4 @@ C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\MesseAPI\obj\Debug\net6.
 C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\MesseAPI\obj\Debug\net6.0\MesseAPI.pdb
 C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\MesseAPI\obj\Debug\net6.0\MesseAPI.genruntimeconfig.cache
 C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\MesseAPI\obj\Debug\net6.0\ref\MesseAPI.dll
+C:\Users\Felix Hartnagel\Downloads\MesseAPINew\MesseAPI\MesseAPI\obj\Debug\net6.0\MesseAPI.sourcelink.json

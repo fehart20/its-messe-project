@@ -14,48 +14,54 @@ namespace Messe_Projekt_Client
         {
             using var db = new MesseDbContext();
 
-
-            Anschrift anschrift = new Anschrift
+            try
             {
-                Strasse = tb_Street.Text,
-                Hausnummer = tb_Hausnummer.Text,
-                Plz = Convert.ToInt32(tb_PLZ.Text),
-                Ort = tb_Ort.Text
-            };
+                Anschrift anschrift = new Anschrift
+                {
+                    Strasse = tb_Street.Text,
+                    Hausnummer = tb_Hausnummer.Text,
+                    Plz = Convert.ToInt32(tb_PLZ.Text),
+                    Ort = tb_Ort.Text
+                };
 
-            Firma firma = new Firma
-            {
-                Name = tb_Firma.Text ?? "-",
-            };
+                Firma firma = new Firma
+                {
+                    Name = tb_Firma.Text ?? "-",
+                };
 
+                Kunde kunde = new Kunde()
+                {
+                    Vorname = tb_Vorname.Text,
+                    Nachname = tb_Nachname.Text,
+                    Anschrift = anschrift,
+                    Firma = firma,
+                    Interessen = new List<Interesse>(),
+                    Confirmed = false
+                };
 
-            Kunde kunde = new Kunde()
-            {
-                Vorname = tb_Vorname.Text,
-                Nachname = tb_Nachname.Text,
-                Anschrift = anschrift,
-                Firma = firma,
-                Interessen = new List<Interesse>(),
-                Confirmed = false
-            };
-
-            if (cb_Kueche.Checked)
-            {
-                kunde.Interessen.Add(new Interesse { ProduktgruppeName = "Küche" });
+                if (cb_Kueche.Checked)
+                {
+                    kunde.Interessen.Add(new Interesse { ProduktgruppeName = "Küche" });
+                }
+                if (cb_Garten.Checked)
+                {
+                    kunde.Interessen.Add(new Interesse { ProduktgruppeName = "Garten" });
+                }
+                if (cb_SmartHome.Checked)
+                {
+                    kunde.Interessen.Add(new Interesse { ProduktgruppeName = "Smart Home" });
+                }
+                db.Kunde.Add(kunde);
             }
-            if (cb_Garten.Checked)
+            catch (Exception ex)
             {
-                kunde.Interessen.Add(new Interesse { ProduktgruppeName = "Garten" });
-            }
-            if (cb_SmartHome.Checked)
-            {
-                kunde.Interessen.Add(new Interesse { ProduktgruppeName = "Smart Home" });
+                MessageBox.Show($"Fehlende Eingabe oder Fehler: \n{ex}");
+                return;
             }
 
-            db.Kunde.Add(kunde);
             db.SaveChanges();
 
-            MessageBox.Show("Erfolgreich erfasst - Vielen Dank!");
+            MessageBox.Show("Daten erfolgreich erfasst - Vielen Dank!");
 
             tb_Vorname.Clear();
             tb_Nachname.Clear();
